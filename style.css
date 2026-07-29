@@ -1,0 +1,536 @@
+/* ========================================= */
+/* RESET */
+/* ========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#07132c;
+    color:white;
+}
+
+/* ========================================= */
+/* BACKGROUND */
+/* ========================================= */
+
+body{
+    background:linear-gradient(180deg,#07132c,#102c5b,#174a8d);
+    position:relative;
+}
+
+/* ========================================= */
+/* STARS */
+/* ========================================= */
+
+.stars,
+.stars2{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.stars::before{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+
+    box-shadow:
+    50px 100px white,
+    150px 60px white,
+    280px 250px white,
+    400px 120px white,
+    550px 90px white,
+    700px 220px white,
+    900px 150px white,
+    1100px 260px white,
+    1300px 100px white,
+    1450px 250px white;
+
+    animation:blink 3s infinite;
+}
+
+.stars2::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:#8ec5ff;
+
+    box-shadow:
+    120px 250px,
+    300px 80px,
+    500px 300px,
+    780px 120px,
+    980px 280px,
+    1180px 170px,
+    1380px 310px;
+
+    animation:blink 5s infinite;
+
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.2;
+    }
+
+}
+
+/* ========================================= */
+/* METEOR */
+/* ========================================= */
+
+.meteor{
+
+    position:absolute;
+
+    top:-100px;
+    left:-200px;
+
+    width:250px;
+    height:2px;
+
+    background:white;
+
+    transform:rotate(35deg);
+
+    animation:meteor 8s linear infinite;
+
+}
+
+@keyframes meteor{
+
+    from{
+        transform:translate(-300px,-200px) rotate(35deg);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    to{
+        transform:translate(1800px,900px) rotate(35deg);
+        opacity:0;
+    }
+
+}
+
+/* ========================================= */
+/* PAGE */
+/* ========================================= */
+
+.page{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:1s;
+
+}
+
+.page.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* ========================================= */
+/* GLASS CARD */
+/* ========================================= */
+
+.glass{
+
+    width:90%;
+    max-width:650px;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    text-align:center;
+
+    animation:zoom 1.3s;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+@keyframes zoom{
+
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+/* ========================================= */
+/* TEXT */
+/* ========================================= */
+
+h1{
+
+    font-size:70px;
+    margin-bottom:15px;
+
+}
+
+h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:45px;
+
+    color:#8fd3ff;
+
+    margin-bottom:15px;
+
+}
+
+h3{
+
+    font-size:25px;
+
+    margin-bottom:25px;
+
+}
+
+p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/* ========================================= */
+/* BUTTON */
+/* ========================================= */
+
+button{
+
+    margin-top:30px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#2b8eff;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:0 0 20px #2b8eff;
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+    background:#5baeff;
+
+    box-shadow:0 0 40px #5baeff;
+
+}
+
+/* ========================================= */
+/* IMAGES */
+/* ========================================= */
+
+.cake{
+
+    width:180px;
+
+    margin-bottom:20px;
+
+    animation:floating 3s infinite;
+
+}
+
+.gift{
+
+    width:170px;
+
+    margin-bottom:20px;
+
+    animation:floating 4s infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* ========================================= */
+/* BALLOON */
+/* ========================================= */
+
+.balloons{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.balloons span{
+
+    position:absolute;
+
+    bottom:-150px;
+
+    width:50px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#77b8ff;
+
+    animation:balloon 12s linear infinite;
+
+}
+
+.balloons span:nth-child(1){left:10%;}
+.balloons span:nth-child(2){left:28%; animation-duration:9s;}
+.balloons span:nth-child(3){left:52%; animation-duration:11s;}
+.balloons span:nth-child(4){left:75%; animation-duration:13s;}
+.balloons span:nth-child(5){left:90%; animation-duration:10s;}
+
+@keyframes balloon{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-130vh);
+
+    }
+
+}
+
+/* ========================================= */
+/* LOADING */
+/* ========================================= */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#061126;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.loader{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    border:8px solid rgba(255,255,255,.2);
+
+    border-top:8px solid white;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:20px;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ========================================= */
+/* RESPONSIVE */
+/* ========================================= */
+
+@media(max-width:768px){
+
+    h2{
+
+        font-size:32px;
+
+    }
+
+    h3{
+
+        font-size:20px;
+
+    }
+
+    p{
+
+        font-size:16px;
+
+    }
+
+    .glass{
+
+        padding:30px;
+
+    }
+
+}
+
+/* ===========================================
+   CONFETTI
+=========================================== */
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    animation:confettiFall linear forwards;
+
+}
+
+@keyframes confettiFall{
+
+    to{
+
+        transform:translateY(120vh) rotate(720deg);
+
+    }
+
+}
+
+/* ===========================================
+   FIREWORK
+=========================================== */
+
+.firework{
+
+    position:fixed;
+
+    width:15px;
+
+    height:15px;
+
+    border-radius:50%;
+
+    animation:explode 1s ease-out forwards;
+
+    box-shadow:
+    0 0 20px currentColor,
+    0 0 40px currentColor,
+    0 0 60px currentColor;
+
+}
+
+@keyframes explode{
+
+    0%{
+
+        transform:scale(0);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(12);
+
+        opacity:0;
+
+    }
+
+}
